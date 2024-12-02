@@ -17,18 +17,18 @@ def home():
 # route per aggiungere elementi alla lista
 @app.route('/aggiungi', methods=['POST'])
 def aggiungi():
-elemento = request.form['elemento']
-if elemento:
-lista_spesa.append(elemento)
-return redirect(url_for('home'))
+    elemento = request.form['elemento']
+    if elemento:
+        lista_spesa.append(elemento)
+    return redirect(url_for('home'))
 
 
 #route per rimuovere elementi grazie all'indice
 @app.route('/rimuovi/<int:indice>', methods=['POST'])
 def rimuovi(indice):
-if 0 <= indice < len(lista_spesa):
-lista_spesa.pop(indice)
-return redirect(url_for('home'))
+    if 0 <= indice < len(lista_spesa):
+        lista_spesa.pop(indice)
+    return redirect(url_for('home'))
 
 
 
