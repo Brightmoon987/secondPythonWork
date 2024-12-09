@@ -12,8 +12,8 @@
             <ul>
                 {% for elemento in lista %}
                 <li>
-                    {{ elemento }}
-                    <form action="/rimuovi/{{ loop.index0 }}" method="post"style="display:inline;">
+                    {{ elemento.elemento }}
+                    <form action="/rimuovi/{{ elemento.id }}" method="post"style="display:inline;">
         
                         <button type="submit">Rimuovi</button>
                     </form>
